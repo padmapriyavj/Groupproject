@@ -22,7 +22,7 @@ app.put("/", (req, res) => {
 app.listen(3000, () => console.log("server started on port 3000"))
 
 
-const mongoConnect = async() => {
+mongoConnect = async () => {
     await mongoose.connect("mongodb://localhost:27017");
     console.log('DB connected')
 
