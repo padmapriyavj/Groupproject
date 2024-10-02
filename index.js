@@ -2,7 +2,7 @@ const express = require("express")
 const mongoose = require("mongoose")
 const app = express()
 
-app.get("/", (req, res) => {
+app.get("/", logThis, (req, res, next) => {
     console.log('get request made')
     console.log('hi')
     console.log('line 8')
@@ -25,8 +25,16 @@ app.listen(3000, () => console.log("server started on port 3000"))
 const mongoConnect = async () => {
     await mongoose.connect("mongodb://localhost:27017");
     console.log('DB connected')
-
 }
 
 mongoConnect()
+
+app.use("/", logThis, (req, res, next) => {
+    console.log("Middleware executed!");
+    next();
+})
+
+function logThis (req, res, next) {
+    console.log('Request Type:', req.method)
+}
 
