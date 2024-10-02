@@ -1,0 +1,15 @@
+{
+    "name": "cpsc449",
+    "version": "1.0.0",
+    "description": "CPSC 449",
+    "main": "index.js",
+    "scripts": {
+        "start": "node --watch index.js",
+        "test": "echo.\"Error: no test specified\" && exit 1"
+    },
+    "author": "Jason Chiu",
+    "license": "JSC",
+    "dependencies": {
+        "express": "4.21.0"
+    }
+}
