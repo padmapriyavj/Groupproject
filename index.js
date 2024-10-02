@@ -1,5 +1,5 @@
 const express = require("express")
-
+const mongoConnect = require("mongoose")
 const app = express()
 
 app.get("/", (req, res) => {
@@ -20,3 +20,13 @@ app.put("/", (req, res) => {
     console.log("put req", req.body)
 })
 app.listen(3000, () => console.log("server started on port 3000"))
+
+
+const mongoConnect = async() => {
+    await mongoose.connect("mongodb://localhost:27017");
+    console.log('DB connected')
+
+}
+
+mongoConnect()
+
