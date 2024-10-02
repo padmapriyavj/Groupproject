@@ -4,6 +4,7 @@ import {Schema, model} from "mongoose";
 const UserSchema = new Schema({
     firstName: String,
     lastName: String,
+    address: String,
     email: String,
     phone: Number
 })
